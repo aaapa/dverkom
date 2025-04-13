@@ -1,0 +1,15 @@
+@use "functions" as *;
+@use "media" as *;
+
+$opacity: 0.5;
+$scale: 0.9;
+
+$color-orange: #FDA360;
+$color-accent: $color-orange;
+$color-gray: #A3A3A3;
+
+$padding-block: fluid(60, 30);
+
+$container-width: ptrm(1400);
+$container-padding: ptrm(16);
+$container-padding-x: ptrm(16);

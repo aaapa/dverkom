@@ -1,0 +1,154 @@
+.feedback {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  scroll-margin-block: ptrm(130);
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__form {
+    width: 100%;
+    max-width: ptrm(1040);
+    min-height: ptrm(400);
+    margin-block: ptrm(30) ptrm(53);
+    padding: ptrm(35) ptrm(70);
+    border-radius: ptrm(15);
+    background-color: #343434;
+
+    @include mobile {
+      margin-block: ptrm(49) ptrm(16);
+      padding: ptrm(30) ptrm(16) ptrm(25) ptrm(10);
+    }
+
+    &-title {
+      font-weight: bold;
+      @include fluid-text(30, 16);
+    }
+
+    &-main {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-bottom {
+      display: flex;
+      gap: ptrm(10);
+      flex-direction: column;
+
+      @include mobile {
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    &-button {
+      width: 100%;
+      max-width: ptrm(225);
+      min-height: ptrm(45);
+      padding: ptrm(10) ptrm(30);
+      font-weight: bold;
+      border-radius: ptrm(20);
+      font-size: ptrm(20);
+      background-color: #242424;
+      @include trns;
+
+      @include hover {
+        background-color: #1B1B1B;
+      }
+    }
+  }
+
+  &__inputs {
+    display: flex;
+    gap: ptrm(25);
+    flex-direction: column;
+    margin-block: ptrm(36) ptrm(40);
+
+    @include mobile {
+      width: 100%;
+      margin-block: ptrm(42) ptrm(30);
+    }
+  }
+
+  &__input-wrapper {
+    width: 100%;
+    max-width: ptrm(340);
+    min-height: ptrm(50);
+    padding-block-end: ptrm(6);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-weight: bold;
+    border-block-end: ptrm(1) solid white;
+
+    @include mobile {
+      max-width: none;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: ptrm(30);
+    position: absolute;
+    z-index: 2;
+    bottom: ptrm(6);
+    font-size: ptrm(20);
+
+    @include mobile {
+      width: 100%;
+    }
+
+    &-placeholder {
+      color: $color-gray;
+      font-size: ptrm(20);
+      position: absolute;
+      bottom: ptrm(10);
+      z-index: 1;
+      transition: all 0.3s;
+      font-weight: bold;
+    }
+
+    &:not(:placeholder-shown) + &-placeholder,
+    &:-webkit-autofill + &-placeholder {
+      font-size: ptrm(16);
+      transform: translateY(ptrm(-35));
+    }
+
+    @include hover {
+      &:not(:focus-visible) + &-placeholder {
+        color: white;
+      }
+    }
+  }
+
+  &__button {
+    font-weight: bold;
+
+    @include mobile {
+      width: 100%;
+      max-width: ptrm(215);
+      letter-spacing: unset !important;
+    }
+  }
+
+  &__message {
+    font-size: ptrm(20);
+
+    &-success {
+      color: green;
+    }
+
+    &-error {
+      color: red;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.button {
+  min-height: ptrm(70);
+  padding: ptrm(20) ptrm(75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  border-radius: ptrm(35);
+  @include fluid-text(21, 16);
+  border: ptrm(1) solid white;
+  letter-spacing: ptrm(6);
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out 0s !important;
+
+  @include hover {
+    opacity: $opacity !important;
+  }
+
+  &:active {
+    scale: $scale;
+  }
+
+  &.long {
+    width: 100%;
+    max-width: ptrm(590);
+    min-height: ptrm(70);
+
+    @include mobile {
+      max-width: ptrm(215);
+      min-height: ptrm(40);
+      letter-spacing: unset;
+      text-transform: none;
+      padding: ptrm(8) ptrm(20);
+    }
+
+    &.smaller {
+      @include fluid-text(21, 12);
+    }
+  }
+}

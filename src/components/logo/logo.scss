@@ -1,0 +1,14 @@
+.logo {
+  display: block;
+  
+  &__image {
+    width: ptrm(260);
+    height: ptrm(92);
+    object-fit: cover;
+
+    @include mobile {
+      width: ptrm(220);
+      height: ptrm(62);
+    }
+  }
+}

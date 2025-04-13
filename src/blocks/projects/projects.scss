@@ -1,0 +1,130 @@
+.projects {
+  width: 100%;
+  padding: $container-padding;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  &__inner {
+    width: 100%;
+    padding: 0rem;
+    display: flex;
+    gap: ptrm(33);
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__slider {
+    width: 100%;
+    max-width: ptrm(1500);
+    min-height: ptrm(800);
+    position: relative;
+    overflow: hidden;
+    border-radius: ptrm(20);
+
+    @include mobile {
+      min-height: ptrm(365);
+    }
+
+    &-button {
+      z-index: 2;
+      
+      &.prev {
+        @include abs-y;
+        left: ptrm(10);
+      }
+
+      &.next {
+        @include abs-y;
+        right: ptrm(10);
+      }
+
+      @include hover {
+        opacity: $opacity;
+      }
+
+      &:active {
+        scale: $scale;
+      }
+    }
+
+    &-pagination {
+      width: 100%;
+      display: flex;
+      gap: ptrm(40);
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      margin-block-start: ptrm(53);
+
+      @include mobile {
+        gap: ptrm(13);
+        margin-block-start: ptrm(35);
+      }
+
+      &-button {
+        @include square(ptrm(15) !important);
+        border-radius: 50%;
+        background-color: #777;
+
+        &.swiper-pagination-bullet-active {
+          opacity: 0.8;
+          cursor: default;
+          background-color: #D9D9D9;
+        }
+
+        @include hover {
+          background-color: #D9D9D9;
+        }
+
+        &:active {
+          scale: $scale;
+        }
+
+        @include mobile {
+          @include square(ptrm(5) !important);
+        }
+      }
+    }
+  }
+
+  &__slider .swiper-slide {
+    width: 100%;
+    height: 100%;
+
+    @include mobile {
+      min-height: ptrm(365);
+    }
+  }
+
+  &__card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    @include mobile {
+      min-height: ptrm(365);
+    }
+
+    &-image {
+      width: 100%;
+      height: fluid(800, 365);
+      object-fit: cover;
+      border-radius: ptrm(20);
+    }
+  }
+}

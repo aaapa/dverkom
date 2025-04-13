@@ -1,0 +1,30 @@
+.title {
+  font-weight: 600;
+
+  &.big {
+    @include fluid-text(60, 36);
+  }
+
+  &.decor {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    &.decor-start {
+      align-items: start;
+    }
+
+    &.decor-center {
+      align-items: center;
+    }
+
+    &::before {
+      content: "";
+      width: 100%;
+      max-width: ptrm(160);
+      height: ptrm(1);
+      display: inline-block;
+      background-color: white;
+    }
+  }
+}

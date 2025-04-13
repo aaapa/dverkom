@@ -1,0 +1,31 @@
+@use "media" as *;
+
+.visually-hidden {
+  position: absolute !important;
+  width: ptrm(1) !important;
+  height: ptrm(1) !important;
+  margin: -ptrm(1) !important;
+  border: ptrm(0) !important;
+  padding: ptrm(0) !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include mobile-above {
+    display: none !important;
+  }
+}
+
+.fullscreen {
+  min-height: 100dvh;
+}
+

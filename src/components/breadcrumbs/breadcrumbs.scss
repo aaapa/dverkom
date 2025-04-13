@@ -1,0 +1,79 @@
+.breadcrumbs {
+  width: 100%;
+  display: flex;
+  align-items: start;
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &-item {
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: "/";
+        @include fluid-text(24, 16);
+        margin-inline: fluid(10, 5);
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    font-weight: 300;
+    @include fluid-text(24, 16);
+    @include trns;
+
+    @include hover {
+      color: $color-accent;
+    }
+     
+    &:active {
+      scale: $scale;
+    }
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: ptrm(1);
+      opacity: 0;
+      position: absolute;
+      left: 0rem;
+      right: 0rem;
+      bottom: 0rem;
+      display: inline-block;
+      background-color: currentColor;
+      transform: translateY(ptrm(3)) scaleY(0);
+    }
+
+    @include hover {
+      &::before {
+        opacity: 1;
+        transform: translateY(ptrm(1)) scaleY(1);
+      }
+    }
+  }
+}

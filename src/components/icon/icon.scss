@@ -1,0 +1,81 @@
+.icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    content: "";
+    
+    $size: ptrm(50);
+    @include square($size);
+
+    flex-shrink: 0;
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+
+  &.whatsapp {
+    &::before {
+      background-color: white;
+      mask-image: url("icons/socials/whatsapp.svg");
+    }
+  }
+
+  &.telegram {
+    &::before {
+      background-color: white;
+      mask-image: url("icons/socials/telegram.svg");
+    }
+  }
+
+  &.instagram {
+    &::before {
+      background-color: white;
+      mask-image: url("icons/socials/instagram.svg");
+    }
+  }
+
+  &.arrow-left {
+    &::before {
+      background-color: white;
+      mask-image: url("icons/arrow-left.svg");
+    }
+  }
+
+  &.arrow-right {
+    &::before {
+      background-color: white;
+      mask-image: url("icons/arrow-right.svg");
+    }
+  }
+
+  &.arrow-down {
+    &::before {
+      background-color: white;
+      mask-image: url("icons/arrow-down.svg");
+    }
+  }
+
+  &.arrow-short-left {
+    &::before {
+      background-color: #959495;
+      mask-image: url("icons/arrow-short-left.svg");
+    }
+  }
+
+  &.arrow-short-right {
+    &::before {
+      background-color: #959495;
+      mask-image: url("icons/arrow-short-right.svg");
+    }
+  }
+
+  &.zoom {
+    &::before {
+      background-color: white;
+      mask-image: url("icons/zoom.png");
+    }
+  }
+}

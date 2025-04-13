@@ -1,0 +1,131 @@
+.cta {
+  width: 100%;
+  padding: ptrm(103) $container-padding ptrm(74) $container-padding;
+
+  @include mobile {
+    padding-block: ptrm(53) ptrm(20);
+  }
+
+  & * {
+    z-index: 2;
+    transition: all 0.8s ease-in-out 0s !important;
+  }
+
+  &__inner {
+    width: 100%;
+    min-height: ptrm(885);
+    padding: ptrm(60);
+    display: flex;
+    gap: ptrm(115);
+    align-items: start;
+    flex-direction: column;
+    justify-content: end;
+    position: relative;
+    overflow: hidden;
+    border-radius: ptrm(20);
+
+    @include mobile {
+      min-height: ptrm(500);
+      padding: ptrm(20);
+      gap: ptrm(26);
+      border-radius: ptrm(15);
+    }
+  }
+
+  &__background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    object-fit: cover;
+    border-radius: ptrm(20);
+    pointer-events: none;
+
+    @include mobile {
+      border-radius: ptrm(15);
+    }
+  }
+
+  &__inner {
+    @include hover {
+      .cta__background {
+        scale: 1.1;
+      }
+    }
+
+    @include hover {
+      .cta__background-mobile {
+        scale: 1.1;
+      }
+    }
+
+    @include hover {
+      .cta__title {
+        scale: 1.1;
+      }
+    }
+
+    @include hover {
+      .cta__desc {
+        scale: 1.1;
+      }
+    }
+
+    @include hover {
+      .cta__button {
+        scale: 1.1;
+      }
+    }
+  }
+
+  &__background-mobile {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    object-fit: cover;
+    border-radius: ptrm(15);
+    pointer-events: none;
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__info {
+    display: flex;
+    gap: ptrm(16);
+    flex-direction: column;
+  }
+
+  &__titile {
+    transition-duration: 1s !important;
+  }
+
+  &__desc {
+    color: $color-gray;
+    max-width: ptrm(600);
+    font-weight: bold;
+    @include fluid-text(30, 16);
+    transition-duration: 0.9s !important;
+  }
+
+  &__bottom {
+    width: 100%;
+    display: flex;
+    align-items: start;
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    z-index: 1;
+  }
+}

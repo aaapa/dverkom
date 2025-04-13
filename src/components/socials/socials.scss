@@ -1,0 +1,40 @@
+.socials {
+  display: flex;
+  align-items: start;
+
+  &__nav {
+    display: flex;
+    align-items: start;
+  }
+
+  &__list {
+    display: flex;
+    gap: ptrm(105);
+    align-items: start;
+
+    @include mobile {
+      gap: ptrm(26);
+    }
+
+    &-item {
+      display: flex;
+      align-items: start;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease-in-out 0s !important;
+
+    @include hover {
+      & .icon::before {
+        background-color: $color-accent;
+      }
+    }
+
+    &:active {
+      scale: $scale;
+    }
+  }
+}
